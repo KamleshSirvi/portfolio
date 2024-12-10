@@ -90,9 +90,9 @@ const Navbar = () => {
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/80 backdrop-blur-md">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              href={item.to}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 activePath === item.href
                   ? "text-primary bg-primary/10"
@@ -101,7 +101,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
